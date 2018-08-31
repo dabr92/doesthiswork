@@ -54,8 +54,6 @@ if nummer1 != 0 and nummer2 != 0 and (nummer1/nummer2==5): #guard statement
 """
 
 testv = "banan"
-pay = 100
-hours = 10
 overtime = 0
 totalpayovertime = 0
 totalpay= 0
@@ -63,17 +61,19 @@ overtimepay = 1.5
 notcorrect = 0
 while notcorrect == 0:
     #input from user should be here when i find out how to take input
-    #ask for pay
-    #ask for hours
+    pay = (input("Timlön tack\n"))
+    hours = (input("Timmar per vecka\n" ))
     try:
+        pay =int(pay)
+        hours =int(hours)
         if hours >= 0 and hours >40 and pay >= 0:
             overtime = hours % 10
             totalpayovertime = (pay*(hours-overtime))+(pay*overtime*overtimepay)
-            print("veckolön på",totalpayovertime,"kr.")
+            print("veckolön på",totalpayovertime*4,"kr.")
             notcorrect = notcorrect + 1
         elif hours >= 0 and hours <=40 and pay >=0:
             totalpay = (pay*hours)
-            print("Veckolön på",totalpay,"kr.")
+            print("Månadslön på",totalpay*4,"kr.")
             notcorrect = notcorrect + 1
         else:
             print("positiva tal, tack")
@@ -81,6 +81,7 @@ while notcorrect == 0:
         print("only numbers, compadre.")
 
 
+'''
 conv = int(32.73)
 print(conv)
 
@@ -115,3 +116,4 @@ def plus(plus1, plus2): #takes 2 arguements
 
 funk = plus(-2,7)
 print (funk)
+'''
